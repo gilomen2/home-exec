@@ -26,7 +26,6 @@ export default {
       package: "com.homeexec.crossplatform"
     },
     web: {
-      favicon: "./assets/favicon.png",
       bundler: "metro"
     },
     extra: {

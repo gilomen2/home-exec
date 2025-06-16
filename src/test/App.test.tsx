@@ -5,7 +5,7 @@ import App from '../../App';
 describe('App Component', () => {
   it('renders correctly', () => {
     render(<App />);
-    expect(screen.getByText('Home Exec Cross-Platform App')).toBeTruthy();
+    expect(screen.getByText('Hello World!')).toBeTruthy();
   });
 
   it('displays platform information', () => {
