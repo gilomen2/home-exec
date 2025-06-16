@@ -1,0 +1,45 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  # Web deployment now handled by Netlify's GitHub integration
+  # Configure at: https://app.netlify.com/sites/[your-site]/settings/deploys
+        
+  build-mobile:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'yarn'
+        
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+      
+    - name: Setup Expo CLI
+      run: yarn global add @expo/cli eas-cli
+      
+    - name: Authenticate with Expo
+      run: expo login --non-interactive
+      env:
+        EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        
+    - name: Build iOS
+      run: yarn build:ios
+      env:
+        EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        
+    - name: Build Android
+      run: yarn build:android
+      env:
+        EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
