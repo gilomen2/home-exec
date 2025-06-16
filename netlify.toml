@@ -1,9 +1,10 @@
 [build]
-  command = "yarn build:web"
+  command = "yarn install --frozen-lockfile && npx expo export:web"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "18.20.4"
+  YARN_VERSION = "4.9.2"
 
 # SPA redirect for React Router
 [[redirects]]
