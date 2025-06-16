@@ -39,7 +39,7 @@ This project uses:
 ## Deployment
 
 ### Web
-Automatically deploys to Vercel when merged to main branch.
+Automatically deploys to Netlify when merged to main branch.
 
 ### Mobile
 Builds are created via Expo Application Services (EAS) when pushed to main.
