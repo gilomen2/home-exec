@@ -1,6 +1,11 @@
 # Dependencies
 node_modules/
-npm-debug.log*
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
 yarn-debug.log*
 yarn-error.log*
 
@@ -21,7 +26,6 @@ web-build/
 .metro-health-check*
 
 # Debug
-npm-debug.*
 yarn-debug.*
 yarn-error.*
 
@@ -30,14 +34,43 @@ yarn-error.*
 *.pem
 
 # Local env files
-.env*.local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # TypeScript
 *.tsbuildinfo
+next-env.d.ts
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # Testing
 coverage/
+.nyc_output
+
+# Logs
+logs
+*.log
+npm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build outputs
+build/
+dist/
+out/
+
+# Temporary files
+tmp/
+temp/

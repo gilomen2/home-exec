@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build:web"
+  command = "yarn build:web"
   publish = "dist"
 
 [build.environment]

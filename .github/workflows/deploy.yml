@@ -54,13 +54,13 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
+        cache: 'yarn'
         
     - name: Install dependencies
-      run: npm ci
+      run: yarn install --frozen-lockfile
       
     - name: Setup Expo CLI
-      run: npm install -g @expo/cli eas-cli
+      run: yarn global add @expo/cli eas-cli
       
     - name: Authenticate with Expo
       run: expo login --non-interactive
@@ -68,11 +68,11 @@ jobs:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         
     - name: Build iOS
-      run: npm run build:ios
+      run: yarn build:ios
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         
     - name: Build Android
-      run: npm run build:android
+      run: yarn build:android
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}

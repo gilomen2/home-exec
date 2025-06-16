@@ -39,7 +39,7 @@ This project uses:
 ## Deployment
 
 ### Web
-Automatically deploys to Netlify when merged to main branch.
+Automatically deploys via Netlify's direct GitHub integration (no secrets needed).
 
 ### Mobile
 Builds are created via Expo Application Services (EAS) when pushed to main.
@@ -49,6 +49,7 @@ Builds are created via Expo Application Services (EAS) when pushed to main.
 1. **Expo CLI**: `npm install -g @expo/cli`
 2. **EAS CLI**: `npm install -g eas-cli`
 3. **Expo Account**: Sign up at expo.dev
-4. **GitHub Secrets**: Configure deployment tokens
+4. **Netlify Account**: Sign up at netlify.com (connect with GitHub)
+5. **GitHub Secrets**: Only needed for mobile builds (EXPO_TOKEN)
 
 For detailed setup instructions, see the deployment documentation.

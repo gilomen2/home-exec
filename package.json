@@ -48,5 +48,6 @@
     "jest-expo": "~49.0.0",
     "typescript": "^5.1.3"
   },
-  "private": true
+  "private": true,
+  "packageManager": "yarn@4.9.2"
 }
